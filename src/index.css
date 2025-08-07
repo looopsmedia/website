@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mouse-dot {
+  position: absolute;
+  width: 16px;
+  height: 28px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #08D9D6, #FF2E63);
+  opacity: 0.4;
+  filter: blur(4px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: fadeOut 0.8s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
