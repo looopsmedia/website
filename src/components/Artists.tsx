@@ -10,7 +10,7 @@ const artists = [
     social: { instagram: "https://instagram.com/adez.wav", twitter: "" }
   },
   {
-    name: "Buğse",
+    name: "Ceku",
     genre: "Rap Artist",
     image: "https://i.ibb.co/5h4BXhgB/bu-sepp.png?auto=compress&cs=tinysrgb&w=400",
     bio: "Soon you'll hear what can't be unheard.",
