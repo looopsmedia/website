@@ -12,7 +12,7 @@ const artists = [
   {
     name: "Buğse",
     genre: "Rap Artist",
-    image: "https://i.ibb.co/h5c40jz/DSC4434?auto=compress&cs=tinysrgb&w=400",
+    image: "https://i.ibb.co/h5c40jz/DSC4434.jpg?auto=compress&cs=tinysrgb&w=400",
     bio: "Soon you'll hear what can't be unheard.",
     social: { instagram: "@busesyldzz", twitter: "@midnightband" }
   },
