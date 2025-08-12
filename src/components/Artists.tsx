@@ -7,7 +7,7 @@ const artists = [
     genre: "Rap Artist",
     image: "https://i.ibb.co/Y7MVs7zz/adezpp.png?auto=compress&cs=tinysrgb&w=400",
     bio: "Every beat is a secret. Until now.",
-    social: { instagram: "@adez.wav", twitter: "" }
+    social: { instagram: "https://instagram.com/adez.wav", twitter: "" }
   },
   {
     name: "Buğse",
