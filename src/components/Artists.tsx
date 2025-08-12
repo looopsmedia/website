@@ -5,16 +5,16 @@ const artists = [
   {
     name: "Adéz",
     genre: "Rap Artist",
-    image: "https://i.ibb.co/Y46LcwYy/DSC4411.jpg?auto=compress&cs=tinysrgb&w=400",
+    image: "https://i.ibb.co/Y7MVs7zz/adezpp.png?auto=compress&cs=tinysrgb&w=400",
     bio: "Every beat is a secret. Until now.",
     social: { instagram: "@adez.wav", twitter: "" }
   },
   {
     name: "Buğse",
     genre: "Rap Artist",
-    image: "https://i.ibb.co/h5c40jz/DSC4434.jpg?auto=compress&cs=tinysrgb&w=400",
+    image: "https://i.ibb.co/5h4BXhgB/bu-sepp.png?auto=compress&cs=tinysrgb&w=400",
     bio: "Soon you'll hear what can't be unheard.",
-    social: { instagram: "@busesyldzz", twitter: "@midnightband" }
+    social: { instagram: "@busesyldzz", twitter: "" }
   },
   {
     name: "DJ Nexus",
