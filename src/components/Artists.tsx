@@ -3,18 +3,18 @@ import { Instagram, Twitter, Music } from 'lucide-react';
 
 const artists = [
   {
-    name: "You could be next!",
-    genre: "Underground Rap Icon",
-    image: "https://i.ibb.co/6JtR1P7V/revealingsoon.jpg?auto=compress&cs=tinysrgb&w=400",
+    name: "Adéz",
+    genre: "Rap Artist",
+    image: "https://i.ibb.co/Y46LcwYy/DSC4411.jpg?auto=compress&cs=tinysrgb&w=400",
     bio: "Every beat is a secret. Until now.",
-    social: { instagram: "@looopsmedia", twitter: "@mayarodriguez" }
+    social: { instagram: "@adez.wav", twitter: "" }
   },
   {
-    name: "The name you’ll never forget.",
-    genre: "Future Pop Star",
-    image: "https://i.ibb.co/6JtR1P7V/revealingsoon.jpg?auto=compress&cs=tinysrgb&w=400",
+    name: "Buğse",
+    genre: "Rap Artist",
+    image: "https://i.ibb.co/h5c40jz/DSC4434?auto=compress&cs=tinysrgb&w=400",
     bio: "Soon you'll hear what can't be unheard.",
-    social: { instagram: "@midnightcollective", twitter: "@midnightband" }
+    social: { instagram: "@busesyldzz", twitter: "@midnightband" }
   },
   {
     name: "DJ Nexus",
