@@ -7,7 +7,7 @@ const partners = [
     genre: "Streetwear",
     image: "https://i.ibb.co/LdcvrMCY/label6.png?auto=compress&cs=tinysrgb&w=400",
     bio: "",
-    social: { instagram: "@looopsmedia", twitter: "@mayarodriguez" }
+    social: { instagram: "https://www.instagram.com/label.6", twitter: "" }
   },
   {
     name: "321 Records",
