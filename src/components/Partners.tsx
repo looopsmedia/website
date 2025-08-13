@@ -3,10 +3,10 @@ import { Instagram, Twitter, Music } from 'lucide-react';
 
 const partners = [
   {
-    name: "Canon",
-    genre: "Underground Rap Icon",
-    image: "https://i.ibb.co/6JtR1P7V/revealingsoon.jpg?auto=compress&cs=tinysrgb&w=400",
-    bio: "Every beat is a secret. Until now.",
+    name: "LABEL6",
+    genre: "Streetwear",
+    image: "https://i.ibb.co/LdcvrMCY/label6.png?auto=compress&cs=tinysrgb&w=400",
+    bio: "",
     social: { instagram: "@looopsmedia", twitter: "@mayarodriguez" }
   },
   {
