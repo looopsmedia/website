@@ -32,7 +32,7 @@ const partners = [
   }
 ];
 
-// helper: handle veya URL'i tam linke çevir (Artists’taki ile aynı mantık)
+// handle ya da direkt URL'i tam linke çevirir
 const toUrl = (val?: string, base?: string) => {
   if (!val) return null;
   if (/^https?:\/\//i.test(val)) return val;
@@ -64,11 +64,11 @@ export const Partners: React.FC = () => {
                 key={index}
                 className="group bg-light-gray/10 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-light-gray/20"
               >
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden aspect-square">
                   <img
                     src={partner.image}
                     alt={partner.name}
-                    className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   {/* overlay tıklamayı engellemesin */}
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-gray/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
@@ -100,9 +100,9 @@ export const Partners: React.FC = () => {
                           <Twitter className="w-4 h-4" />
                         </a>
                       )}
-                      {/* Müzik linki yoksa göstermeyelim; eklersen aynı patternle aç */}
+                      {/* Müzik linki eklersen aynı kalıpla göster */}
                       {/* {musicUrl && (
-                        <a href={musicUrl} ...>
+                        <a href={musicUrl} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-teal transition-colors">
                           <Music className="w-4 h-4" />
                         </a>
                       )} */}
@@ -110,7 +110,7 @@ export const Partners: React.FC = () => {
                   </div>
                 </div>
 
-                {/* bio kaldırıldı; kart yüksekliği kısaldı */}
+                {/* bio kaldırıldı; kart daha kısa */}
                 <div className="p-5">
                   <h3 className="text-lg font-bold text-light-gray mb-0.5">{partner.name}</h3>
                   <p className="text-teal font-medium">{partner.genre}</p>
