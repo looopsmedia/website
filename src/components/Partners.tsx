@@ -32,6 +32,15 @@ const partners = [
   }
 ];
 
+// helper: handle veya URL'i tam linke çevir (Artists’taki ile aynı mantık)
+const toUrl = (val?: string, base?: string) => {
+  if (!val) return null;
+  if (/^https?:\/\//i.test(val)) return val;
+  const handle = val.replace(/^@/, '').trim();
+  if (!handle) return null;
+  return `${base}/${handle}`;
+};
+
 export const Partners: React.FC = () => {
   return (
     <section id="partners" className="py-24 bg-dark-gray">
@@ -46,47 +55,69 @@ export const Partners: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {partners.map((partner, index) => (
-            <div key={index} className="group bg-light-gray/10 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-light-gray/20">
-              <div className="relative overflow-hidden">
-                <img 
-                  src={partner.image} 
-                  alt={partner.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-gray/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
-                  <div className="flex space-x-3">
-                    <a 
-                      href={`https://instagram.com/${partner.social.instagram.replace('@', '')}`} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-teal transition-colors"
-                    >
-                      <Instagram className="w-4 h-4" />
-                    </a>
-                    <a 
-                      href={`https://twitter.com/${partner.social.twitter.replace('@', '')}`} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-teal transition-colors"
-                    >
-                      <Twitter className="w-4 h-4" />
-                    </a>
-                    <button className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-teal transition-colors">
-                      <Music className="w-4 h-4" />
-                    </button>
+          {partners.map((partner, index) => {
+            const igUrl = toUrl(partner.social.instagram, 'https://instagram.com');
+            const twUrl = toUrl(partner.social.twitter, 'https://x.com'); // X (Twitter)
+
+            return (
+              <div
+                key={index}
+                className="group bg-light-gray/10 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-light-gray/20"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={partner.image}
+                    alt={partner.name}
+                    className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  {/* overlay tıklamayı engellemesin */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-gray/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+                  {/* ikonlar üstte ve tıklanabilir */}
+                  <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100 z-10">
+                    <div className="flex space-x-3">
+                      {igUrl && (
+                        <a
+                          href={igUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${partner.name} on Instagram`}
+                          title="Instagram"
+                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-teal transition-colors"
+                        >
+                          <Instagram className="w-4 h-4" />
+                        </a>
+                      )}
+                      {twUrl && (
+                        <a
+                          href={twUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${partner.name} on X`}
+                          title="X (Twitter)"
+                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-teal transition-colors"
+                        >
+                          <Twitter className="w-4 h-4" />
+                        </a>
+                      )}
+                      {/* Müzik linki yoksa göstermeyelim; eklersen aynı patternle aç */}
+                      {/* {musicUrl && (
+                        <a href={musicUrl} ...>
+                          <Music className="w-4 h-4" />
+                        </a>
+                      )} */}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-light-gray mb-1">{partner.name}</h3>
-                <p className="text-teal font-medium mb-3">{partner.genre}</p>
-                <p className="text-light-gray/70 text-sm leading-relaxed">{partner.bio}</p>
+                {/* bio kaldırıldı; kart yüksekliği kısaldı */}
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-light-gray mb-0.5">{partner.name}</h3>
+                  <p className="text-teal font-medium">{partner.genre}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
