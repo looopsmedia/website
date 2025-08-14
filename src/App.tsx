@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { DemoSubmit } from "./components/DemoSubmit";
 import { Artists } from './components/Artists';
 import { MediaProduction } from './components/MediaProduction';
 import { MusicDistribution } from './components/MusicDistribution';
@@ -16,6 +17,7 @@ function App() {
     <div className="min-h-screen bg-dark-gray">
       <Header />
       <Hero />
+	  <DemoSubmit />
       <Artists />
       <MediaProduction />
       <MusicDistribution />
