@@ -7,7 +7,11 @@ const artists = [
     genre: "Rap Artist",
     image: "https://i.ibb.co/Y7MVs7zz/adezpp.png?auto=compress&cs=tinysrgb&w=400",
     bio: "Every beat is a secret. Until now.",
-    social: { instagram: "https://instagram.com/adez.wav", twitter: "http://www.x.com/adezcarleone" }
+    social: {
+      instagram: "https://instagram.com/adez.wav",
+      twitter: "http://www.x.com/adezcarleone",
+      // music: "https://open.spotify.com/artist/XXXX" // istersen ekle
+    }
   },
   {
     name: "Ceku",
@@ -21,7 +25,11 @@ const artists = [
     genre: "Artist",
     image: "https://i.ibb.co/tpyD74FB/cuneyt.png?auto=compress&cs=tinysrgb&w=400",
     bio: "Underground house and techno producer with releases on major electronic music labels.",
-    social: { instagram: "https://www.instagram.com/cuneyt.buyukyaka", twitter: "https://x.com/cuneytbuyukyaka", music: "https://open.spotify.com/intl-tr/artist/3KM4yx6xgZ3Ty2xdnQaI78?si=eHoTeNbpRHOuWDwZzD0dyQ" }
+    social: {
+      instagram: "https://www.instagram.com/cuneyt.buyukyaka",
+      twitter: "https://x.com/cuneytbuyukyaka",
+      music: "https://open.spotify.com/intl-tr/artist/3KM4yx6xgZ3Ty2xdnQaI78?si=eHoTeNbpRHOuWDwZzD0dyQ"
+    }
   },
   {
     name: "Luna Santos",
@@ -35,10 +43,10 @@ const artists = [
 // helper: handle veya URL'i tam linke çevir
 const toUrl = (val?: string, base?: string) => {
   if (!val) return null;
-  if (/^https?:\/\//i.test(val)) return val;
+  if (/^https?:\/\//i.test(val)) return val; // tam URL ise aynen döndür
   const handle = val.replace(/^@/, '').trim();
   if (!handle) return null;
-  return `${base}/${handle}`;
+  return base ? `${base}/${handle}` : null; // music için base yoksa null
 };
 
 export const Artists: React.FC = () => {
@@ -57,8 +65,9 @@ export const Artists: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {artists.map((artist, index) => {
             const igUrl = toUrl(artist.social.instagram, 'https://instagram.com');
-            const twUrl = toUrl(artist.social.twitter, 'https://x.com'); // Twitter = X
-            // varsa müzik linki eklemek istersen: const musicUrl = artist.social.music && toUrl(...)
+            const twUrl = toUrl(artist.social.twitter, 'https://x.com'); // X (Twitter)
+            // music tam URL bekler (Spotify/Apple/YouTube Music vs). Tam URL ise yukarıdaki regex ile yakalanıp aynen döner.
+            const musicUrl = toUrl(artist.social.music);
 
             return (
               <div
@@ -71,10 +80,11 @@ export const Artists: React.FC = () => {
                     alt={artist.name}
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  {/* overlay tıklamayı engellemesin */}
+
+                  {/* hover overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-gray/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
-                  {/* ikonlar en üstte ve tıklanabilir */}
+                  {/* sosyal ikonlar */}
                   <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100 z-10">
                     <div className="flex space-x-3">
                       {igUrl && (
@@ -101,12 +111,18 @@ export const Artists: React.FC = () => {
                           <Twitter className="w-4 h-4" />
                         </a>
                       )}
-                      {/* Music linkin yoksa gizli kalsın; varsa benzer şekilde ekle */}
-                      {/* {musicUrl && (
-                        <a href={musicUrl} ...>
+                      {musicUrl && (
+                        <a
+                          href={musicUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${artist.name} music`}
+                          title="Listen"
+                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-teal transition-colors"
+                        >
                           <Music className="w-4 h-4" />
                         </a>
-                      )} */}
+                      )}
                     </div>
                   </div>
                 </div>
@@ -124,3 +140,4 @@ export const Artists: React.FC = () => {
     </section>
   );
 };
+
