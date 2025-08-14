@@ -23,7 +23,7 @@ const artists = [
   {
     name: "Cüneyt Büyükyaka",
     genre: "Artist",
-    image: "https://i.ibb.co/tpyD74FB/cuneyt.png?auto=compress&cs=tinysrgb&w=400",
+    image: "https://i.ibb.co/0RGn1nMs/cuneytiki.png?auto=compress&cs=tinysrgb&w=400",
     bio: "Underground house and techno producer with releases on major electronic music labels.",
     social: {
       instagram: "https://www.instagram.com/cuneyt.buyukyaka",
