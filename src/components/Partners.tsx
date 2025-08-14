@@ -3,18 +3,18 @@ import { Instagram, Twitter, Music } from 'lucide-react';
 
 const partners = [
   {
-    name: "LABEL6",
-    genre: "Streetwear",
-    image: "https://i.ibb.co/LdcvrMCY/label6.png?auto=compress&cs=tinysrgb&w=400",
+    name: "Soon",
+    genre: "Soon",
+    image: "https://i.ibb.co/6JtR1P7V/revealingsoon.jpg?auto=compress&cs=tinysrgb&w=400",
     bio: "",
-    social: { instagram: "https://www.instagram.com/label.6", twitter: "" }
+    social: { instagram: "", twitter: "" }
   },
   {
     name: "321 Records",
-    genre: "Future Pop Star",
-    image: "https://i.ibb.co/6JtR1P7V/revealingsoon.jpg?auto=compress&cs=tinysrgb&w=400",
-    bio: "Soon you'll hear what can't be unheard.",
-    social: { instagram: "@midnightcollective", twitter: "@midnightband" }
+    genre: "Music Production Studio",
+    image: "https://i.ibb.co/yFThLBzm/321records.png?auto=compress&cs=tinysrgb&w=400",
+    bio: "",
+    social: { instagram: "https://www.instagram.com/321record", twitter: "" }
   },
   {
     name: "DJ Nexus",
@@ -24,11 +24,11 @@ const partners = [
     social: { instagram: "@djnexusofficial", twitter: "@nexusbeats" }
   },
   {
-    name: "Luna Santos",
-    genre: "R&B / Soul",
-    image: "https://i.ibb.co/6JtR1P7V/revealingsoon.jpg?auto=compress&cs=tinysrgb&w=400",
-    bio: "Soulful vocalist and songwriter bringing contemporary R&B with classic influences.",
-    social: { instagram: "@lunasantosmusic", twitter: "@lunasantos" }
+    name: "LABEL6",
+    genre: "Streetwear",
+    image: "https://i.ibb.co/LdcvrMCY/label6.png?auto=compress&cs=tinysrgb&w=400",
+    bio: "",
+    social: { instagram: "https://www.instagram.com/label.6", twitter: "" }
   }
 ];
 
