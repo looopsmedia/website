@@ -166,7 +166,7 @@ export const DemoSubmit: React.FC = () => {
                   "
                 />
                 <p className="text-xs text-light-gray/50 mt-1">
-                  Büyük dosyalar için internet hızın & servis limiti etkili olabilir.
+                  Upload speed and service limits may affect large files.
                 </p>
               </div>
 
