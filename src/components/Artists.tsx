@@ -17,11 +17,11 @@ const artists = [
     social: { instagram: "@busesyldzz", twitter: "" }
   },
   {
-    name: "DJ Nexus",
-    genre: "House / Techno",
-    image: "https://i.ibb.co/6JtR1P7V/revealingsoon.jpg?auto=compress&cs=tinysrgb&w=400",
+    name: "Cüneyt Büyükyaka",
+    genre: "Artist",
+    image: "https://i.ibb.co/tpyD74FB/cuneyt.png?auto=compress&cs=tinysrgb&w=400",
     bio: "Underground house and techno producer with releases on major electronic music labels.",
-    social: { instagram: "@djnexusofficial", twitter: "@nexusbeats" }
+    social: { instagram: "https://www.instagram.com/cuneyt.buyukyaka", twitter: "https://x.com/cuneytbuyukyaka", music: "https://open.spotify.com/intl-tr/artist/3KM4yx6xgZ3Ty2xdnQaI78?si=eHoTeNbpRHOuWDwZzD0dyQ" }
   },
   {
     name: "Luna Santos",
