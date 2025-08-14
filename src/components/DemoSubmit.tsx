@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Send, X, UploadCloud } from "lucide-react";
 
 // ---- CONFIG ----
-// Formspree'den alacağın endpoint'i BURAYA yapıştıracaksın (5. adımda)
+// Formspree'den alacağın endpoint'i BURAYA yapıştır
 const FORM_ENDPOINT = "https://formspree.io/f/your_form_id";
 
 export const DemoSubmit: React.FC = () => {
@@ -62,29 +62,32 @@ export const DemoSubmit: React.FC = () => {
       <div
         className="
           fixed z-40
-          right-5 bottom-5
-          md:right-6 md:top-1/2 md:-translate-y-1/2 md:bottom-auto
-          w-[calc(100%-1rem)] md:w-auto
-          flex md:block justify-center
+          inset-x-0 bottom-0
+          md:inset-auto md:right-6 md:top-1/2 md:-translate-y-1/2 md:bottom-auto
         "
       >
-        <button
-          onClick={() => setIsOpen(true)}
-          className="
-            flex items-center gap-2
-            px-4 py-3 md:px-5 md:py-3
-            bg-gradient-to-r from-teal to-pink
-            text-white font-semibold
-            rounded-2xl shadow-lg
-            hover:brightness-110 active:scale-95
-            transition-all
-            w-full md:w-auto
-          "
-          aria-label="Submit Demo"
-        >
-          <Send className="w-5 h-5" />
-          <span>Submit Demo</span>
-        </button>
+        {/* Mobil: full-width bar, Desktop: auto */}
+        <div className="w-full md:w-auto max-w-none md:max-w-none px-0 md:px-0 pb-[env(safe-area-inset-bottom)] md:pb-0">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="
+              w-full md:w-auto
+              flex items-center justify-center gap-2
+              px-5 py-4 md:py-3
+              bg-gradient-to-r from-teal to-pink
+              text-white font-semibold
+              rounded-none md:rounded-2xl
+              shadow-[0_-10px_24px_rgba(0,0,0,0.35)] md:shadow-lg
+              border-t border-white/10 md:border-0
+              hover:brightness-110 active:scale-95
+              transition-all
+            "
+            aria-label="Submit Demo"
+          >
+            <Send className="w-5 h-5" />
+            <span>Submit Demo</span>
+          </button>
+        </div>
       </div>
 
       {/* Modal */}
