@@ -36,7 +36,7 @@ const artists = [
     genre: "R&B / Soul",
     image: "https://i.ibb.co/6JtR1P7V/revealingsoon.jpg?auto=compress&cs=tinysrgb&w=400",
     bio: "Soulful vocalist and songwriter bringing contemporary R&B with classic influences.",
-    social: { instagram: "@lunasantosmusic", twitter: "@lunasantos" }
+    social: { instagram: "", twitter: "" }
   }
 ];
 
