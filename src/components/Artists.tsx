@@ -5,7 +5,7 @@ const artists = [
   {
     name: "Adéz",
     genre: "Rap Artist",
-    image: "https://i.ibb.co/chhmnsP9/adezz.png?auto=compress&cs=tinysrgb&w=400",
+    image: "https://i.ibb.co/xtNr0HWW/adezz.png?auto=compress&cs=tinysrgb&w=400",
     bio: "Every beat is a secret. Until now.",
     social: {
       instagram: "https://instagram.com/adez.wav",
