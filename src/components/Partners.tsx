@@ -3,31 +3,31 @@ import { Instagram, Twitter, Music } from 'lucide-react';
 
 const partners = [
   {
-    name: "Soon",
-    genre: "Soon",
-    image: "https://i.ibb.co/6JtR1P7V/revealingsoon.jpg?auto=compress&cs=tinysrgb&w=400",
-    bio: "",
+    name: "MAKAM Worldwide",
+    genre: "Production",
+    image: "https://i.ibb.co/DHh0Qmw5/makam.png?auto=compress&cs=tinysrgb&w=400",
+    bio: "Based in Dubai",
     social: { instagram: "", twitter: "" }
   },
   {
-    name: "321 Records",
-    genre: "Music Production Studio",
-    image: "https://i.ibb.co/yFThLBzm/321records.png?auto=compress&cs=tinysrgb&w=400",
-    bio: "",
-    social: { instagram: "https://www.instagram.com/321record", twitter: "" }
+    name: "GALAKTIKA Pictures ",
+    genre: "Film Production",
+    image: "https://i.ibb.co/gMBTTGSC/galaktika.png?auto=compress&cs=tinysrgb&w=400",
+    bio: "Based in North Macedonia",
+    social: { instagram: "", twitter: "" }
   },
   {
-    name: "DJ Nexus",
-    genre: "House / Techno",
-    image: "https://i.ibb.co/6JtR1P7V/revealingsoon.jpg?auto=compress&cs=tinysrgb&w=400",
-    bio: "Underground house and techno producer with releases on major electronic music labels.",
-    social: { instagram: "@djnexusofficial", twitter: "@nexusbeats" }
+    name: "321 RECORDS",
+    genre: "Music Production Studio",
+    image: "https://i.ibb.co/yFThLBzm/321records.png?auto=compress&cs=tinysrgb&w=400",
+    bio: "Based in Istanbul",
+    social: { instagram: "https://www.instagram.com/321record", twitter: "" }
   },
   {
     name: "LABEL6",
     genre: "Streetwear",
     image: "https://i.ibb.co/LdcvrMCY/label6.png?auto=compress&cs=tinysrgb&w=400",
-    bio: "",
+    bio: "Based in Istanbul",
     social: { instagram: "https://www.instagram.com/label.6", twitter: "" }
   }
 ];
