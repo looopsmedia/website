@@ -5,7 +5,7 @@ const artists = [
   {
     name: "Adéz",
     genre: "Rap Artist",
-    image: "https://i.ibb.co/Y7MVs7zz/adezpp.png?auto=compress&cs=tinysrgb&w=400",
+    image: "https://i.ibb.co/chhmnsP9/adezz.png?auto=compress&cs=tinysrgb&w=400",
     bio: "Every beat is a secret. Until now.",
     social: {
       instagram: "https://instagram.com/adez.wav",
@@ -22,7 +22,7 @@ const artists = [
   },
   {
     name: "Cüneyt Büyükyaka",
-    genre: "Artist",
+    genre: "Pop-Rock and Polyphonic Music Artist",
     image: "https://i.ibb.co/0RGn1nMs/cuneytiki.png?auto=compress&cs=tinysrgb&w=400",
     bio: "Underground house and techno producer with releases on major electronic music labels.",
     social: {
@@ -32,10 +32,10 @@ const artists = [
     }
   },
   {
-    name: "Luna Santos",
-    genre: "R&B / Soul",
+    name: "Coming Soon",
+    genre: "Coming Soon",
     image: "https://i.ibb.co/6JtR1P7V/revealingsoon.jpg?auto=compress&cs=tinysrgb&w=400",
-    bio: "Soulful vocalist and songwriter bringing contemporary R&B with classic influences.",
+    bio: "Coming Soon",
     social: { instagram: "", twitter: "" }
   }
 ];
