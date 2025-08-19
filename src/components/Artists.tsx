@@ -6,25 +6,21 @@ const artists = [
     name: "Adéz",
     genre: "Rap Artist",
     image: "https://i.ibb.co/xtNr0HWW/adezz.png?auto=compress&cs=tinysrgb&w=400",
-    bio: "Every beat is a secret. Until now.",
     social: {
       instagram: "https://instagram.com/adez.wav",
       twitter: "http://www.x.com/adezcarleone",
-      // music: "https://open.spotify.com/artist/XXXX"
     }
   },
   {
     name: "Ceku",
     genre: "Rap Artist",
     image: "https://i.ibb.co/5h4BXhgB/bu-sepp.png?auto=compress&cs=tinysrgb&w=400",
-    bio: "Soon you'll hear what can't be unheard.",
     social: { instagram: "@busesyldzz", twitter: "" }
   },
   {
     name: "Cüneyt Büyükyaka",
     genre: "Pop-Rock and Polyphonic Music Artist",
     image: "https://i.ibb.co/0RGn1nMs/cuneytiki.png?auto=compress&cs=tinysrgb&w=400",
-    bio: "Underground house and techno producer with releases on major electronic music labels.",
     social: {
       instagram: "https://www.instagram.com/cuneyt.buyukyaka",
       twitter: "https://x.com/cuneytbuyukyaka",
@@ -35,7 +31,6 @@ const artists = [
     name: "Coming Soon",
     genre: "Coming Soon",
     image: "https://i.ibb.co/6JtR1P7V/revealingsoon.jpg?auto=compress&cs=tinysrgb&w=400",
-    bio: "Coming Soon",
     social: { instagram: "", twitter: "" }
   }
 ];
@@ -43,10 +38,10 @@ const artists = [
 // helper: handle veya URL'i tam linke çevir
 const toUrl = (val?: string, base?: string) => {
   if (!val) return null;
-  if (/^https?:\/\//i.test(val)) return val; // tam URL ise aynen döndür
+  if (/^https?:\/\//i.test(val)) return val;
   const handle = val.replace(/^@/, '').trim();
   if (!handle) return null;
-  return base ? `${base}/${handle}` : null; // music için base yoksa null
+  return base ? `${base}/${handle}` : null;
 };
 
 export const Artists: React.FC = () => {
@@ -73,7 +68,6 @@ export const Artists: React.FC = () => {
                 key={index}
                 className="group bg-light-gray/10 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-light-gray/20"
               >
-                {/* Görsel (overlay ve ikonlar kaldırıldı) */}
                 <div className="relative overflow-hidden">
                   <img
                     src={artist.image}
@@ -82,12 +76,11 @@ export const Artists: React.FC = () => {
                   />
                 </div>
 
-                {/* İçerik */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-light-gray mb-1">{artist.name}</h3>
                   <p className="text-teal font-medium mb-4">{artist.genre}</p>
 
-                  {/* Sosyal ikonlar (bio yerine) */}
+                  {/* Sosyal ikonlar */}
                   <div className="flex items-center gap-3">
                     {igUrl && (
                       <a
@@ -96,7 +89,7 @@ export const Artists: React.FC = () => {
                         rel="noopener noreferrer"
                         aria-label={`${artist.name} on Instagram`}
                         title="Instagram"
-                        className="p-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full text-white transition-colors"
+                        className="p-2 bg-teal hover:bg-pink rounded-full text-white transition-colors"
                       >
                         <Instagram className="w-4 h-4" />
                       </a>
@@ -108,7 +101,7 @@ export const Artists: React.FC = () => {
                         rel="noopener noreferrer"
                         aria-label={`${artist.name} on X`}
                         title="X (Twitter)"
-                        className="p-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full text-white transition-colors"
+                        className="p-2 bg-teal hover:bg-pink rounded-full text-white transition-colors"
                       >
                         <Twitter className="w-4 h-4" />
                       </a>
@@ -120,7 +113,7 @@ export const Artists: React.FC = () => {
                         rel="noopener noreferrer"
                         aria-label={`${artist.name} music`}
                         title="Listen"
-                        className="p-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full text-white transition-colors"
+                        className="p-2 bg-teal hover:bg-pink rounded-full text-white transition-colors"
                       >
                         <Music className="w-4 h-4" />
                       </a>
