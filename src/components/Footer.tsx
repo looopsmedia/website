@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-3 text-white/70">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-teal" />
-                <span>looopsmedialtd@gmail.com</span>
+                <span>info@looopsmedia.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-teal" />
