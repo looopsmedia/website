@@ -3,7 +3,7 @@ import { Send, X, UploadCloud } from "lucide-react";
 
 // ---- CONFIG ----
 // Formspree'den alacağın endpoint'i BURAYA yapıştır
-const FORM_ENDPOINT = "https://formspree.io/f/your_form_id";
+const FORM_ENDPOINT = "https://formspree.io/f/xrblwkgj";
 
 export const DemoSubmit: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
