@@ -10,7 +10,7 @@ const artists = [
     social: {
       instagram: "https://instagram.com/adez.wav",
       twitter: "http://www.x.com/adezcarleone",
-      // music: "https://open.spotify.com/artist/XXXX" // istersen ekle
+      // music: "https://open.spotify.com/artist/XXXX"
     }
   },
   {
@@ -65,8 +65,7 @@ export const Artists: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {artists.map((artist, index) => {
             const igUrl = toUrl(artist.social.instagram, 'https://instagram.com');
-            const twUrl = toUrl(artist.social.twitter, 'https://x.com'); // X (Twitter)
-            // music tam URL bekler (Spotify/Apple/YouTube Music vs). Tam URL ise yukarıdaki regex ile yakalanıp aynen döner.
+            const twUrl = toUrl(artist.social.twitter, 'https://x.com');
             const musicUrl = toUrl(artist.social.music);
 
             return (
@@ -74,63 +73,59 @@ export const Artists: React.FC = () => {
                 key={index}
                 className="group bg-light-gray/10 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-light-gray/20"
               >
+                {/* Görsel (overlay ve ikonlar kaldırıldı) */}
                 <div className="relative overflow-hidden">
                   <img
                     src={artist.image}
                     alt={artist.name}
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-
-                  {/* hover overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-gray/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-
-                  {/* sosyal ikonlar */}
-                  <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100 z-10">
-                    <div className="flex space-x-3">
-                      {igUrl && (
-                        <a
-                          href={igUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${artist.name} on Instagram`}
-                          title="Instagram"
-                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-teal transition-colors"
-                        >
-                          <Instagram className="w-4 h-4" />
-                        </a>
-                      )}
-                      {twUrl && (
-                        <a
-                          href={twUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${artist.name} on X`}
-                          title="X (Twitter)"
-                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-teal transition-colors"
-                        >
-                          <Twitter className="w-4 h-4" />
-                        </a>
-                      )}
-                      {musicUrl && (
-                        <a
-                          href={musicUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${artist.name} music`}
-                          title="Listen"
-                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-teal transition-colors"
-                        >
-                          <Music className="w-4 h-4" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
                 </div>
 
+                {/* İçerik */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-light-gray mb-1">{artist.name}</h3>
-                  <p className="text-teal font-medium mb-3">{artist.genre}</p>
-                  <p className="text-light-gray/70 text-sm leading-relaxed">{artist.bio}</p>
+                  <p className="text-teal font-medium mb-4">{artist.genre}</p>
+
+                  {/* Sosyal ikonlar (bio yerine) */}
+                  <div className="flex items-center gap-3">
+                    {igUrl && (
+                      <a
+                        href={igUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${artist.name} on Instagram`}
+                        title="Instagram"
+                        className="p-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full text-white transition-colors"
+                      >
+                        <Instagram className="w-4 h-4" />
+                      </a>
+                    )}
+                    {twUrl && (
+                      <a
+                        href={twUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${artist.name} on X`}
+                        title="X (Twitter)"
+                        className="p-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full text-white transition-colors"
+                      >
+                        <Twitter className="w-4 h-4" />
+                      </a>
+                    )}
+                    {musicUrl && (
+                      <a
+                        href={musicUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${artist.name} music`}
+                        title="Listen"
+                        className="p-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full text-white transition-colors"
+                      >
+                        <Music className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             );
@@ -140,4 +135,3 @@ export const Artists: React.FC = () => {
     </section>
   );
 };
-
