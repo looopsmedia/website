@@ -4,7 +4,7 @@ import { Instagram, Twitter, Music } from 'lucide-react';
 const artists = [
   {
     name: "Adéz",
-    genre: "Rap Artist</br>",
+    genre: "Rap Artist",
     image: "https://i.ibb.co/xtNr0HWW/adezz.png?auto=compress&cs=tinysrgb&w=400",
     social: {
       instagram: "https://instagram.com/adez.wav",
