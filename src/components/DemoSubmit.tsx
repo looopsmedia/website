@@ -2,41 +2,54 @@ import React, { useEffect, useRef, useState } from "react";
 import { Send, X, UploadCloud } from "lucide-react";
 
 // ---- CONFIG ----
-// Formspree'den alacağın endpoint'i BURAYA yapıştır
+// Getform endpoint'in
 const FORM_ENDPOINT = "https://getform.io/f/bjjrmdjb";
+
+// İstemci tarafı boyut sınırı (MB) — ihtiyacına göre değiştir
+const MAX_SIZE_MB = 25;
 
 export const DemoSubmit: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [fullName, setFullName] = useState("");
   const [message, setMessage] = useState("");
   const [file, setFile] = useState<File | null>(null);
+  const [fileError, setFileError] = useState<string | null>(null);
   const [isSending, setIsSending] = useState(false);
   const [status, setStatus] = useState<null | "ok" | "err">(null);
+  const [errorText, setErrorText] = useState<string | null>(null);
 
   const dialogRef = useRef<HTMLDivElement>(null);
 
   // ESC ile kapat
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setIsOpen(false);
-    document.addEventListener("keydown", onKey);
+    document.addEventListener("keydown", onKey, { passive: true });
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
   const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const f = e.target.files?.[0];
-    setFile(f ?? null);
+    const f = e.target.files?.[0] || null;
+    if (f && f.size > MAX_SIZE_MB * 1024 * 1024) {
+      setFileError(`Please choose a file under ${MAX_SIZE_MB}MB.`);
+      e.target.value = "";
+      setFile(null);
+      return;
+    }
+    setFileError(null);
+    setFile(f);
   };
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSending(true);
     setStatus(null);
+    setErrorText(null);
 
     try {
       const formData = new FormData();
       formData.append("fullName", fullName);
       formData.append("message", message);
-      if (file) formData.append("file", file);
+      if (file) formData.append("file", file); // Gerekirse "attachment" da deneyebilirsin
 
       const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
@@ -44,13 +57,31 @@ export const DemoSubmit: React.FC = () => {
         headers: { Accept: "application/json" },
       });
 
-      if (!res.ok) throw new Error("Submit failed");
+      let data: any = null;
+      try {
+        data = await res.json();
+      } catch {
+        /* bazı yanıtlar boş olabilir */
+      }
+
+      if (!res.ok) {
+        const msg =
+          data?.error ||
+          data?.message ||
+          (typeof data === "string" ? data : "") ||
+          `Request failed (${res.status})`;
+        setStatus("err");
+        setErrorText(msg);
+        return;
+      }
+
       setStatus("ok");
       setFullName("");
       setMessage("");
       setFile(null);
-    } catch {
+    } catch (err: any) {
       setStatus("err");
+      setErrorText(err?.message || "Something went wrong.");
     } finally {
       setIsSending(false);
     }
@@ -67,7 +98,7 @@ export const DemoSubmit: React.FC = () => {
         "
       >
         {/* Mobil: full-width bar, Desktop: auto */}
-        <div className="w-full md:w-auto max-w-none md:max-w-none px-0 md:px-0 pb-[env(safe-area-inset-bottom)] md:pb-0">
+        <div className="w-full md:w-auto px-0 md:px-0 pb-[env(safe-area-inset-bottom)] md:pb-0">
           <button
             onClick={() => setIsOpen(true)}
             className="
@@ -168,9 +199,13 @@ export const DemoSubmit: React.FC = () => {
                     cursor-pointer
                   "
                 />
-                <p className="text-xs text-light-gray/50 mt-1">
-                  Upload speed and service limits may affect large files.
-                </p>
+                {fileError ? (
+                  <p className="text-xs text-red-400 mt-1">{fileError}</p>
+                ) : (
+                  <p className="text-xs text-light-gray/50 mt-1">
+                    Upload speed and service limits may affect large files.
+                  </p>
+                )}
               </div>
 
               {/* Message */}
@@ -198,7 +233,7 @@ export const DemoSubmit: React.FC = () => {
               <div className="pt-2">
                 <button
                   type="submit"
-                  disabled={isSending}
+                  disabled={isSending || !!fileError}
                   className="
                     w-full flex items-center justify-center gap-2
                     px-5 py-3 rounded-xl
@@ -220,7 +255,7 @@ export const DemoSubmit: React.FC = () => {
                 )}
                 {status === "err" && (
                   <p className="text-red-400 text-sm mt-3 text-center">
-                    Something went wrong. Please try again.
+                    {errorText || "Something went wrong. Please try again."}
                   </p>
                 )}
               </div>
