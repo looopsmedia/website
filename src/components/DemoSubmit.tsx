@@ -2,15 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { Send, X, UploadCloud } from "lucide-react";
 
 // ---- CONFIG ----
-// Getform endpoint'in
 const FORM_ENDPOINT = "https://getform.io/f/bjjrmdjb";
-
-// İstemci tarafı boyut sınırı (MB) — ihtiyacına göre değiştir
 const MAX_SIZE_MB = 25;
 
 export const DemoSubmit: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");          // ✅ Email state
   const [message, setMessage] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [fileError, setFileError] = useState<string | null>(null);
@@ -48,8 +46,9 @@ export const DemoSubmit: React.FC = () => {
     try {
       const formData = new FormData();
       formData.append("fullName", fullName);
+      formData.append("email", email);        // ✅ Email gönderiliyor
       formData.append("message", message);
-      if (file) formData.append("file", file); // Gerekirse "attachment" da deneyebilirsin
+      if (file) formData.append("file", file);
 
       const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
@@ -60,9 +59,7 @@ export const DemoSubmit: React.FC = () => {
       let data: any = null;
       try {
         data = await res.json();
-      } catch {
-        /* bazı yanıtlar boş olabilir */
-      }
+      } catch {}
 
       if (!res.ok) {
         const msg =
@@ -77,6 +74,7 @@ export const DemoSubmit: React.FC = () => {
 
       setStatus("ok");
       setFullName("");
+      setEmail("");       // ✅ reset email
       setMessage("");
       setFile(null);
     } catch (err: any) {
@@ -97,7 +95,6 @@ export const DemoSubmit: React.FC = () => {
           md:inset-auto md:right-6 md:top-1/2 md:-translate-y-1/2 md:bottom-auto
         "
       >
-        {/* Mobil: full-width bar, Desktop: auto */}
         <div className="w-full md:w-auto px-0 md:px-0 pb-[env(safe-area-inset-bottom)] md:pb-0">
           <button
             onClick={() => setIsOpen(true)}
@@ -124,12 +121,10 @@ export const DemoSubmit: React.FC = () => {
       {/* Modal */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-          {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300"
             onClick={() => setIsOpen(false)}
           />
-          {/* Dialog */}
           <div
             ref={dialogRef}
             className="
@@ -170,12 +165,29 @@ export const DemoSubmit: React.FC = () => {
                   required
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="
-                    w-full rounded-xl bg-black/30 border border-light-gray/20 
-                    px-4 py-3 text-light-gray placeholder:text-light-gray/40
-                    focus:outline-none focus:border-teal
-                  "
+                  className="w-full rounded-xl bg-black/30 border border-light-gray/20 
+                             px-4 py-3 text-light-gray placeholder:text-light-gray/40
+                             focus:outline-none focus:border-teal"
                   placeholder="Your name and surname"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label className="block text-sm text-light-gray/70 mb-1" htmlFor="email">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full rounded-xl bg-black/30 border border-light-gray/20 
+                             px-4 py-3 text-light-gray placeholder:text-light-gray/40
+                             focus:outline-none focus:border-teal"
+                  placeholder="your@email.com"
                 />
               </div>
 
@@ -190,14 +202,12 @@ export const DemoSubmit: React.FC = () => {
                   type="file"
                   accept="audio/*"
                   onChange={onFileChange}
-                  className="
-                    w-full rounded-xl bg-black/30 border border-light-gray/20 
-                    file:mr-4 file:py-2 file:px-4 file:rounded-lg 
-                    file:border-0 file:bg-teal file:text-black 
-                    text-light-gray
-                    focus:outline-none focus:border-teal
-                    cursor-pointer
-                  "
+                  className="w-full rounded-xl bg-black/30 border border-light-gray/20 
+                             file:mr-4 file:py-2 file:px-4 file:rounded-lg 
+                             file:border-0 file:bg-teal file:text-black 
+                             text-light-gray
+                             focus:outline-none focus:border-teal
+                             cursor-pointer"
                 />
                 {fileError ? (
                   <p className="text-xs text-red-400 mt-1">{fileError}</p>
@@ -219,12 +229,9 @@ export const DemoSubmit: React.FC = () => {
                   rows={4}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="
-                    w-full rounded-xl bg-black/30 border border-light-gray/20 
-                    px-4 py-3 text-light-gray placeholder:text-light-gray/40
-                    focus:outline-none focus:border-teal
-                    resize-y
-                  "
+                  className="w-full rounded-xl bg-black/30 border border-light-gray/20 
+                             px-4 py-3 text-light-gray placeholder:text-light-gray/40
+                             focus:outline-none focus:border-teal resize-y"
                   placeholder="Tell us about the track, credits, links, etc."
                 />
               </div>
@@ -234,14 +241,12 @@ export const DemoSubmit: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSending || !!fileError}
-                  className="
-                    w-full flex items-center justify-center gap-2
-                    px-5 py-3 rounded-xl
-                    bg-gradient-to-r from-teal to-pink text-white font-semibold
-                    hover:brightness-110 active:scale-[0.98]
-                    disabled:opacity-60 disabled:cursor-not-allowed
-                    transition-all
-                  "
+                  className="w-full flex items-center justify-center gap-2
+                             px-5 py-3 rounded-xl
+                             bg-gradient-to-r from-teal to-pink text-white font-semibold
+                             hover:brightness-110 active:scale-[0.98]
+                             disabled:opacity-60 disabled:cursor-not-allowed
+                             transition-all"
                 >
                   <Send className="w-5 h-5" />
                   {isSending ? "Sending..." : "Send Demo"}
