@@ -33,7 +33,7 @@ const partners = [
   {
     name: "KREAFLY",
     genre: "Marketing & Advertising",
-    image: "https://via.placeholder.com/400x400.png?text=Kreafly",
+    image: "https://i.ibb.co/1GTHXFDV/kreafly.png",
     bio: "Based in Istanbul",
     social: { instagram: "", twitter: "" }
   }
