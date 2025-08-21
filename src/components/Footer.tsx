@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
                 <a href="#" className="w-10 h-10 bg-white/10 hover:bg-teal rounded-xl flex items-center justify-center transition-colors duration-200">
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/10 hover:bg-teal rounded-xl flex items-center justify-center transition-colors duration-200">
+                <a href="https://www.youtube.com/@LooopsMediaLtd" className="w-10 h-10 bg-white/10 hover:bg-teal rounded-xl flex items-center justify-center transition-colors duration-200">
                   <Youtube className="w-5 h-5" />
                 </a>
               </div>
