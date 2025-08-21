@@ -24,7 +24,7 @@ const equipment = [
     category: "Studio Monitors",
     description: "Three-way Smart Active Monitor with precise imaging, wide sweet spot, and advanced room calibration, designed for professional mixing and mastering environments.",
     specs: ["Frequency Response: 32Hz – 43kHz (±1.5 dB)", "Amplification: 150W LF, 120W MF, 90W HF (Class D)", "Max SPL: 118dB"],
-    image: "https://i.ibb.co/gL3PH4D0/8351b-main-image.jpg"
+    image: "https://iili.io/K9kwl6u.md.jpg"
   },
   {
     icon: Settings,
