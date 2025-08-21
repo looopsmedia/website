@@ -11,12 +11,12 @@ const equipment = [
     image: "https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
   {
-    icon: Headphones,
-    name: "Focal Utopia",
-    category: "Reference Headphones",
-    description: "Open-back reference headphones for critical listening and mixing applications.",
-    specs: ["Impedance: 80Ω", "Frequency Response: 5Hz-50kHz", "Driver: 40mm Beryllium"],
-    image: "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400"
+    icon: Settings,
+    name: "Soundcraft Signature 12 MTK",
+    category: "Live/Studio Mixer",
+    description: "12-channel professional analog mixer with built-in Lexicon effects and multitrack USB audio interface, ideal for recording, mixing, and live performance applications.",
+    specs: ["Channels: 12 (8 mono mic/line, 2 stereo)", "USB Interface: 14-in / 12-out multitrack", "EQ: 3-band EQ with swept mids on mono channels"],
+    image: "https://i.ibb.co/N2Y4Wd96/studio.jpg"
   },
   {
     icon: Monitor,
