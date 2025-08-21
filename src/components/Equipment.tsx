@@ -40,7 +40,7 @@ const equipment = [
     category: "DJ Controller / Pad Controller",
     description: "Professional DJ performance pad controller designed for Rekordbox DJ and Serato DJ Pro. Featuring 32 multi-colored performance pads, slide FX controls, and intuitive workflow integration, the DDJ-XP2 expands creative possibilities for live sets and studio production.",
     specs: ["Pads: 32 multi-colored, velocity-sensitive performance pads", "Controls: Slide FX strips, transport and loop controls", "Dimensions: 333 × 235 × 42 mm"],
-    image: "https://i.ibb.co/0yGDZnwb/ddj-xp2-compatibility.jpg?auto=compress&cs=tinysrgb&w=400"
+    image: "https://iili.io/K9ktkXt.jpg?auto=compress&cs=tinysrgb&w=400"
   },
   {
     icon: Radio,
