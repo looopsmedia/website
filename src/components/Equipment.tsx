@@ -44,11 +44,11 @@ const equipment = [
   },
   {
     icon: Radio,
-    name: "Antelope Orion Studio",
-    category: "Audio Interface",
-    description: "High-end audio interface with pristine AD/DA conversion and low latency.",
-    specs: ["I/O: 32x32", "Sample Rate: up to 192kHz", "Latency: <1ms"],
-    image: "https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=400"
+    name: "Nanlite Forza 300 / 500",
+    category: "Studio Lighting",
+    description: "High-output LED studio light designed for professional video and photography production. Combining compact design with powerful illumination, the Forza series delivers accurate color reproduction, lightweight portability, and versatile mounting options for any studio setup.",
+    specs: ["Color Temperature: 5600K", "CRI/TLCI: CRI 98, TLCI 95", "Dimming: 0–100%"],
+    image: "https://iili.io/K9vdg4I.md.jpg?auto=compress&cs=tinysrgb&w=400"
   }
 ];
 
