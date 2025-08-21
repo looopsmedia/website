@@ -17,11 +17,11 @@ const partners = [
     social: { instagram: "", twitter: "" }
   },
   {
-    name: "321 RECORDS",
-    genre: "Music Production Studio",
-    image: "https://i.ibb.co/yFThLBzm/321records.png?auto=compress&cs=tinysrgb&w=400",
+    name: "KREAFLY",
+    genre: "Marketing & Advertising",
+    image: "https://i.ibb.co/1GTHXFDV/kreafly.png",
     bio: "Based in Istanbul",
-    social: { instagram: "https://www.instagram.com/321record", twitter: "" }
+    social: { instagram: "http://instagram.com/kreafly/", twitter: "" }
   },
   {
     name: "LABEL6",
@@ -30,13 +30,13 @@ const partners = [
     bio: "Based in Istanbul",
     social: { instagram: "https://www.instagram.com/label.6", twitter: "" }
   },
-  {
-    name: "KREAFLY",
-    genre: "Marketing & Advertising",
-    image: "https://i.ibb.co/1GTHXFDV/kreafly.png",
+   {
+    name: "321 RECORDS",
+    genre: "Music Production Studio",
+    image: "https://i.ibb.co/yFThLBzm/321records.png?auto=compress&cs=tinysrgb&w=400",
     bio: "Based in Istanbul",
-    social: { instagram: "http://instagram.com/kreafly/", twitter: "" }
-  }
+    social: { instagram: "https://www.instagram.com/321record", twitter: "" }
+  },
 ];
 
 const toUrl = (val?: string, base?: string) => {
