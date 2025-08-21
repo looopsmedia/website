@@ -31,11 +31,11 @@ const partners = [
     social: { instagram: "https://www.instagram.com/label.6", twitter: "" }
   },
   {
-    name: "NEW Partner",
-    genre: "Creative Agency",
-    image: "https://via.placeholder.com/400x400.png?text=New+Partner",
-    bio: "Based in London",
-    social: { instagram: "https://instagram.com/newpartner", twitter: "" }
+    name: "KREAFLYr",
+    genre: "Marketing & Advertising",
+    image: "https://i.ibb.co/1GTHXFDV/kreafly.png",
+    bio: "Based in Istanbul",
+    social: { instagram: "https://www.instagram.com/kreafly", twitter: "" }
   }
 ];
 
