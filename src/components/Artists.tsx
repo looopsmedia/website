@@ -19,7 +19,7 @@ const artists = [
   },
   {
     name: "Cüneyt Büyükyaka",
-    genre: "Pop-Rock and Polyphonic Music Artist",
+    genre: "Pop-Rock Artist",
     image: "https://i.ibb.co/0RGn1nMs/cuneytiki.png?auto=compress&cs=tinysrgb&w=400",
     social: {
       instagram: "https://www.instagram.com/cuneyt.buyukyaka",
