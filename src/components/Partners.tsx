@@ -45,10 +45,10 @@ export const Partners: React.FC = () => {
     <section id="partners" className="py-24 bg-dark-gray">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-light-gray mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold text-light-gray mb-3">
             Our <span className="text-teal">Partners</span>
           </h2>
-          <p className="text-base sm:text-xl text-light-gray/70 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-light-gray/70 max-w-2xl mx-auto">
             Meet the collaborators, labels, and industry leaders shaping the sound of tomorrow with us.
           </p>
         </div>
@@ -56,15 +56,15 @@ export const Partners: React.FC = () => {
         {/* HORIZONTAL SCROLL / SCROLL SNAP */}
         <div className="relative">
           {/* gradient edges (optional nice touch) */}
-          <div className="pointer-events-none absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-dark-gray to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-dark-gray to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 h-full w-4 bg-gradient-to-r from-dark-gray to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-4 bg-gradient-to-l from-dark-gray to-transparent" />
 
           <div
             className={[
               // container scroll
               'flex overflow-x-auto snap-x snap-mandatory',
               // spacing & padding so first/last cards align center-ish on mobile
-              'gap-6 px-1 sm:px-2',
+              'gap-4 px-1 sm:px-2',
               // smooth scroll on iOS
               'scroll-px-2',
               // hide scrollbar (works in most modern browsers; add CSS if you want perfect control)
@@ -85,14 +85,14 @@ export const Partners: React.FC = () => {
                   className={[
                     'group relative shrink-0 snap-center',
                     // responsive card width
-                    'min-w-[260px] sm:min-w-[280px] md:min-w-[300px] lg:min-w-[320px]',
+                    'min-w-[200px] sm:min-w-[220px] md:min-w-[240px] lg:min-w-[260px] xl:min-w-[280px]',
                     // visuals
                     'bg-light-gray/10 rounded-2xl overflow-hidden border border-light-gray/20',
-                    'transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]'
+                    'transition-all duration-500 hover:shadow-2xl hover:scale-[1.01]'
                   ].join(' ')}
                 >
                   {/* Fotoğraf alanı */}
-                  <div className="relative overflow-hidden aspect-square">
+                  <div className="relative overflow-hidden aspect-[4/5]">
                     <img
                       src={partner.image}
                       alt={partner.name}
@@ -134,7 +134,7 @@ export const Partners: React.FC = () => {
                   </div>
 
                   {/* Metin alanı */}
-                  <div className="p-5 flex flex-col">
+                  <div className="p-4 flex flex-col">
                     <h3 className="text-lg font-bold text-light-gray mb-0.5">{partner.name}</h3>
                     <p className="text-teal font-medium">{partner.genre}</p>
                     <p className="text-light-gray/70 mt-2 text-sm line-clamp-2">{partner.bio}</p>
