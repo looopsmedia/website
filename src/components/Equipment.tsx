@@ -27,12 +27,12 @@ const equipment = [
     image: "https://iili.io/K9kwl6u.md.jpg"
   },
   {
-    icon: Settings,
-    name: "SSL 4000 Series",
-    category: "Mixing Console",
-    description: "Legendary analog mixing console used on countless hit records.",
-    specs: ["Channels: 48", "EQ: 4-band parametric", "Dynamics: VCA automation"],
-    image: "https://images.pexels.com/photos/1751731/pexels-photo-1751731.jpeg?auto=compress&cs=tinysrgb&w=400"
+    icon: Headphones,
+    name: "Beyerdynamic DT 770 Pro (80 Ohm)",
+    category: "Studio Headphones",
+    description: "Closed-back studio headphones delivering accurate sound reproduction, strong bass response, and excellent comfort for long recording and mixing sessions. A trusted industry standard for musicians, producers, and audio engineers.",
+    specs: ["Type: Closed-back, over-ear", "Impedance: 80 Ω", "Frequency Response: 5 Hz – 35 kHz"],
+    image: "https://iili.io/K9keG8G.md.jpg?auto=compress&cs=tinysrgb&w=400"
   },
   {
     icon: Volume2,
