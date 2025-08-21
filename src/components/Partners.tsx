@@ -31,11 +31,11 @@ const partners = [
     social: { instagram: "https://www.instagram.com/label.6", twitter: "" }
   },
   {
-    name: "KREAFLYr",
+    name: "KREAFLY",
     genre: "Marketing & Advertising",
-    image: "https://i.ibb.co/1GTHXFDV/kreafly.png",
+    image: "https://via.placeholder.com/400x400.png?text=Kreafly",
     bio: "Based in Istanbul",
-    social: { instagram: "https://www.instagram.com/kreafly", twitter: "" }
+    social: { instagram: "", twitter: "" }
   }
 ];
 
@@ -60,7 +60,7 @@ export const Partners: React.FC = () => {
           </p>
         </div>
 
-        {/* 5 sütunlu grid */}
+        {/* 5 kolonlu grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {partners.map((partner, index) => {
             const igUrl = toUrl(partner.social.instagram, 'https://instagram.com');
@@ -111,11 +111,15 @@ export const Partners: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Metin alanı */}
+                {/* Metin alanı (yükseklik sabitleme ile hizalı) */}
                 <div className="p-5 flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold text-light-gray mb-0.5">{partner.name}</h3>
-                  <p className="text-teal font-medium">{partner.genre}</p>
-                  <p className="text-light-gray/70 mt-2 text-sm line-clamp-2">{partner.bio}</p>
+                  <h3 className="text-lg font-bold text-light-gray mb-0.5 min-h-[28px]">
+                    {partner.name}
+                  </h3>
+                  <p className="text-teal font-medium min-h-[24px]">{partner.genre}</p>
+                  <p className="text-light-gray/70 mt-2 text-sm line-clamp-2 min-h-[40px]">
+                    {partner.bio}
+                  </p>
                 </div>
               </div>
             );
