@@ -1,43 +1,24 @@
 import React from 'react';
 import { Instagram, Twitter } from 'lucide-react';
 
-// ---- Types ----
-type Social = { instagram?: string; twitter?: string };
-export type Partner = {
-  name: string;
-  genre: string;
-  image: string;
-  bio?: string;
-  social: Social;
-};
+/**
+ * Partners grid with incremental "Load More" button.
+ * - Pure JS (no TS types) to avoid build issues.
+ * - Pass your partners array via props or use the default export at the bottom.
+ */
 
-// ---- Helpers ----
-const toUrl = (val?: string, base?: string) => {
+// -------- Helpers --------
+const toUrl = (val, base) => {
   if (!val) return null;
   if (/^https?:\/\//i.test(val)) return val;
-  const handle = val.replace(/^@/, '').trim();
+  const handle = String(val).replace(/^@/, '').trim();
   if (!handle) return null;
   return `${base}/${handle}`;
 };
 
-// ---- Component ----
-interface PartnersProps {
-  partners: Partner[];
-  /** İlk etapta kaç partner gösterilsin */
-  initialCount?: number; // default: 4
-  /** Her tıklamada kaç tane daha yüklensin */
-  step?: number; // default: 4
-  /** Başlık metinleri (çok dilli kullanım için) */
-  i18n?: {
-    title?: string;
-    subtitle?: string;
-    loadMore?: string;
-    showLess?: string;
-  };
-}
-
-export const Partners: React.FC<PartnersProps> = ({
-  partners,
+// -------- Component --------
+export const Partners = ({
+  partners = [],
   initialCount = 4,
   step = 4,
   i18n = {
@@ -47,10 +28,12 @@ export const Partners: React.FC<PartnersProps> = ({
     showLess: 'Daha az göster',
   },
 }) => {
-  const [visible, setVisible] = React.useState(Math.min(initialCount, partners.length));
+  const safeInitial = Math.max(0, Math.min(initialCount, partners.length));
+  const [visible, setVisible] = React.useState(safeInitial);
+
   const canLoadMore = visible < partners.length;
   const loadMore = () => setVisible((v) => Math.min(v + step, partners.length));
-  const showLess = () => setVisible(Math.min(initialCount, partners.length));
+  const showLess = () => setVisible(safeInitial);
 
   return (
     <section id="partners" className="py-24 bg-dark-gray">
@@ -68,21 +51,28 @@ export const Partners: React.FC<PartnersProps> = ({
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {partners.slice(0, visible).map((partner, index) => {
-            const igUrl = toUrl(partner.social.instagram, 'https://instagram.com');
-            const twUrl = toUrl(partner.social.twitter, 'https://x.com');
+            const igUrl = toUrl(partner?.social?.instagram, 'https://instagram.com');
+            const twUrl = toUrl(partner?.social?.twitter, 'https://x.com');
 
             return (
               <div
-                key={`${partner.name}-${index}`}
+                key={`${partner?.name || 'partner'}-${index}`}
                 className="group bg-light-gray/10 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-light-gray/20 flex flex-col"
               >
                 {/* Image */}
                 <div className="relative overflow-hidden aspect-square">
                   <img
-                    src={partner.image}
-                    alt={partner.name}
+                    src={partner?.image}
+                    alt={partner?.name || 'Partner'}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading={index < 4 ? 'eager' : 'lazy'}
+                    onError={(e) => {
+                      e.currentTarget.src =
+                        'data:image/svg+xml;charset=UTF-8,' +
+                        encodeURIComponent(
+                          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#111"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#888" font-family="Arial" font-size="16">Image not found</text></svg>`
+                        );
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-gray/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
@@ -94,7 +84,7 @@ export const Partners: React.FC<PartnersProps> = ({
                           href={igUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={`${partner.name} on Instagram`}
+                          aria-label={`${partner?.name || 'Partner'} on Instagram`}
                           title="Instagram"
                           className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-teal transition-colors"
                         >
@@ -106,7 +96,7 @@ export const Partners: React.FC<PartnersProps> = ({
                           href={twUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={`${partner.name} on X`}
+                          aria-label={`${partner?.name || 'Partner'} on X`}
                           title="X (Twitter)"
                           className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-teal transition-colors"
                         >
@@ -119,11 +109,11 @@ export const Partners: React.FC<PartnersProps> = ({
 
                 {/* Text */}
                 <div className="p-5 flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold text-light-gray mb-0.5">{partner.name}</h3>
-                  <p className="text-teal font-medium">{partner.genre}</p>
-                  {partner.bio && (
+                  <h3 className="text-lg font-bold text-light-gray mb-0.5">{partner?.name}</h3>
+                  <p className="text-teal font-medium">{partner?.genre}</p>
+                  {partner?.bio ? (
                     <p className="text-light-gray/70 mt-2 text-sm line-clamp-2">{partner.bio}</p>
-                  )}
+                  ) : null}
                 </div>
               </div>
             );
@@ -140,7 +130,7 @@ export const Partners: React.FC<PartnersProps> = ({
             >
               {i18n.loadMore}
             </button>
-          ) : partners.length > initialCount ? (
+          ) : partners.length > safeInitial ? (
             <button
               type="button"
               onClick={showLess}
@@ -155,9 +145,8 @@ export const Partners: React.FC<PartnersProps> = ({
   );
 };
 
-// ---- Example default export for quick drop-in ----
-// Remove this if you import Partners elsewhere and pass your own data.
-const defaultPartners: Partner[] = [
+// -------- Example default export for quick test --------
+const defaultPartners = [
   {
     name: 'MAKAM Worldwide',
     genre: 'Production',
@@ -186,9 +175,16 @@ const defaultPartners: Partner[] = [
     bio: 'Based in Istanbul',
     social: { instagram: 'https://www.instagram.com/label.6', twitter: '' },
   },
-  // ... ileriye dönük daha fazla partner eklenebilir
+  // Daha fazla partner eklenebilir
 ];
 
 export default function PartnersSection() {
-  return <Partners partners={defaultPartners} initialCount={4} step={4} i18n={{ title: 'Our', subtitle: 'Partners', loadMore: 'Daha fazlası', showLess: 'Daha az göster' }} />;
+  return (
+    <Partners
+      partners={defaultPartners}
+      initialCount={4}
+      step={4}
+      i18n={{ title: 'Our', subtitle: 'Partners', loadMore: 'Daha fazlası', showLess: 'Daha az göster' }}
+    />
+  );
 }
