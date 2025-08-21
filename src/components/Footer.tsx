@@ -17,6 +17,8 @@ export const Footer: React.FC = () => {
     <footer className="bg-dark-gray text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          
+          {/* Logo & Social */}
           <div className="col-span-1 md:col-span-2">
             <div className="mb-6">
               <div className="text-2xl font-bold mb-4">
@@ -27,16 +29,36 @@ export const Footer: React.FC = () => {
                 and music distribution. Your sound, our passion.
               </p>
               <div className="flex space-x-4">
-                <a href="https://www.instagram.com/looopsmedia/" className="w-10 h-10 bg-white/10 hover:bg-teal rounded-xl flex items-center justify-center transition-colors duration-200">
+                <a 
+                  href="https://www.instagram.com/looopsmedia/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 hover:bg-teal rounded-xl flex items-center justify-center transition-colors"
+                >
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/10 hover:bg-teal rounded-xl flex items-center justify-center transition-colors duration-200">
+                <a 
+                  href="https://twitter.com/looopsmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 hover:bg-teal rounded-xl flex items-center justify-center transition-colors"
+                >
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="https://www.youtube.com/@LooopsMediaLtd" className="w-10 h-10 bg-white/10 hover:bg-teal rounded-xl flex items-center justify-center transition-colors duration-200">
+                <a 
+                  href="https://www.youtube.com/@LooopsMediaLtd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 hover:bg-teal rounded-xl flex items-center justify-center transition-colors"
+                >
                   <Youtube className="w-5 h-5" />
                 </a>
-                <a href="https://www.tiktok.com/@looopsmedia" className="w-10 h-10 bg-white/10 hover:bg-teal rounded-xl flex items-center justify-center transition-colors duration-200">
+                <a 
+                  href="https://www.tiktok.com/@looopsmedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 hover:bg-teal rounded-xl flex items-center justify-center transition-colors"
+                >
                   <TikTokIcon className="w-5 h-5" />
                 </a>
               </div>
@@ -47,15 +69,15 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-white/70">
-              <li><a href="#" className="hover:text-teal transition-colors duration-200">Artist Development</a></li>
-              <li><a href="#" className="hover:text-teal transition-colors duration-200">Music Production</a></li>
-              <li><a href="#" className="hover:text-teal transition-colors duration-200">Video Production</a></li>
-              <li><a href="#" className="hover:text-teal transition-colors duration-200">Film Production</a></li>
-              <li><a href="#" className="hover:text-teal transition-colors duration-200">Distribution</a></li>
-              <li><a href="#" className="hover:text-teal transition-colors duration-200">Mixing & Mastering</a></li>
-              <li><a href="#" className="hover:text-teal transition-colors duration-200">Equipments</a></li>
-              <li><a href="#" className="hover:text-teal transition-colors duration-200">Producer</a></li>
-              <li><a href="#" className="hover:text-teal transition-colors duration-200">PR Works</a></li>
+              {[
+                "Artist Development", "Music Production", "Video Production", 
+                "Film Production", "Distribution", "Mixing & Mastering", 
+                "Equipments", "Producer", "PR Works"
+              ].map((service) => (
+                <li key={service}>
+                  <a href="#" className="hover:text-teal transition-colors duration-200">{service}</a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -79,12 +101,19 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
+        {/* Bottom bar */}
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-white/60">© 2025 Looops Media. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
-            <a href="#" className="text-white/60 hover:text-teal transition-colors duration-200 text-sm">Privacy Policy</a>
-            <a href="#" className="text-white/60 hover:text-teal transition-colors duration-200 text-sm">Terms of Service</a>
-            <a href="#" className="text-white/60 hover:text-teal transition-colors duration-200 text-sm">Cookie Policy</a>
+            {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
+              <a 
+                key={item} 
+                href="#" 
+                className="text-white/60 hover:text-teal transition-colors duration-200 text-sm"
+              >
+                {item}
+              </a>
+            ))}
           </div>
         </div>
       </div>
