@@ -35,7 +35,7 @@ const partners = [
     genre: "Marketing & Advertising",
     image: "https://i.ibb.co/1GTHXFDV/kreafly.png",
     bio: "Based in Istanbul",
-    social: { instagram: "", twitter: "" }
+    social: { instagram: "http://instagram.com/kreafly/", twitter: "" }
   }
 ];
 
