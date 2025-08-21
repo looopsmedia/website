@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Twitter, Music } from 'lucide-react';
+import { Instagram, Twitter } from 'lucide-react';
 
 const partners = [
   {
@@ -29,6 +29,13 @@ const partners = [
     image: "https://i.ibb.co/LdcvrMCY/label6.png?auto=compress&cs=tinysrgb&w=400",
     bio: "Based in Istanbul",
     social: { instagram: "https://www.instagram.com/label.6", twitter: "" }
+  },
+  {
+    name: "NEW Partner",
+    genre: "Creative Agency",
+    image: "https://via.placeholder.com/400x400.png?text=New+Partner",
+    bio: "Based in London",
+    social: { instagram: "https://instagram.com/newpartner", twitter: "" }
   }
 ];
 
@@ -53,7 +60,8 @@ export const Partners: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* 5 sütunlu grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {partners.map((partner, index) => {
             const igUrl = toUrl(partner.social.instagram, 'https://instagram.com');
             const twUrl = toUrl(partner.social.twitter, 'https://x.com');
