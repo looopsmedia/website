@@ -16,7 +16,7 @@ const equipment = [
     category: "Live/Studio Mixer",
     description: "12-channel professional analog mixer with built-in Lexicon effects and multitrack USB audio interface, ideal for recording, mixing, and live performance applications.",
     specs: ["Channels: 12 (8 mono mic/line, 2 stereo)", "USB Interface: 14-in / 12-out multitrack", "EQ: 3-band EQ with swept mids on mono channels"],
-    image: "https://i.ibb.co/N2Y4Wd96/studio.jpg"
+    image: "https://iili.io/KHrxK1s.md.jpg?auto=compress&cs=tinysrgb&w=400"
   },
   {
     icon: Monitor,
@@ -24,7 +24,7 @@ const equipment = [
     category: "Studio Monitors",
     description: "Three-way Smart Active Monitor with precise imaging, wide sweet spot, and advanced room calibration, designed for professional mixing and mastering environments.",
     specs: ["Frequency Response: 32Hz – 43kHz (±1.5 dB)", "Amplification: 150W LF, 120W MF, 90W HF (Class D)", "Max SPL: 118dB"],
-    image: "https://iili.io/K9kwl6u.md.jpg"
+    image: "https://iili.io/K9kwl6u.md.jpg?auto=compress&cs=tinysrgb&w=400"
   },
   {
     icon: Headphones,
