@@ -52,9 +52,6 @@ export const Header: React.FC = () => {
             <button onClick={() => scrollToSection('music-distribution')} className="text-light-gray hover:text-teal transition-colors duration-200 font-medium">
               Distribution
             </button>
-            <button onClick={() => scrollToSection('equipment')} className="text-light-gray hover:text-teal transition-colors duration-200 font-medium">
-              Equipment
-            </button>
 			<button onClick={() => scrollToSection('partners')} className="text-light-gray hover:text-teal transition-colors duration-200 font-medium">
               Partners
             </button>
