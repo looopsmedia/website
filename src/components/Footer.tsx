@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-teal" />
-                <span>Duman Sokak No: 17 4. Levent/İstanbul</span>
+                <span>Petra Suites Rumeli Cad. No:22 Kağıthane/İstanbul</span>
               </div>
             </div>
           </div>
