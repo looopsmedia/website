@@ -21,7 +21,6 @@ function App() {
       <Artists />
       <MediaProduction />
       <MusicDistribution />
-      <Equipment />
 	  <Partners />
       <About />
       <Footer />
