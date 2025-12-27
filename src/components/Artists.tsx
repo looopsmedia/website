@@ -11,6 +11,7 @@ const artists = [
       twitter: "https://x.com/mevlan_kurtishi",
       music: "https://open.spotify.com/intl-tr/artist/6wydir4mzVKMaHsxfIqjaD",
     },
+  },
   {
     name: "Adéz",
     genre: "Rap Artist",
