@@ -32,14 +32,12 @@ const artists = [
     genre: "Rap Artist",
     image: "https://i.ibb.co/Lzr4K267/tar-k.png?auto=compress&cs=tinysrgb&w=400",
     social: {
-      instagram: "https://www.instagram.com/cuneyt.buyukyaka",
-      twitter: "https://x.com/cuneytbuyukyaka",
-      music:
-        "https://open.spotify.com/intl-tr/artist/3KM4yx6xgZ3Ty2xdnQaI78?si=eHoTeNbpRHOuWDwZzD0dyQ",
+      instagram: "https://www.instagram.com/tarik.krgz",
+      twitter: "",
+      music: "",
+        
     },
   },
-
-  // ✅ Test için 2 yeni artist (uydurma)
   {
     name: "Lina K",
     genre: "R&B Artist",
@@ -248,10 +246,8 @@ export const Artists: React.FC = () => {
             {looped.map(card)}
           </div>
 
-          {/* İsteğe bağlı: küçük ipucu */}
-          <div className="mt-4 text-center text-light-gray/50 text-sm">
-            (Hover yapınca durur)
-          </div>
+          
+          
         </div>
       </div>
     </section>
