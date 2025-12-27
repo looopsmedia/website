@@ -5,7 +5,7 @@ const artists = [
   {
     name: "Adéz",
     genre: "Rap Artist",
-    image: "https://i.ibb.co/xtNr0HWW/adezz.png?auto=compress&cs=tinysrgb&w=400",
+    image: "https://i.ibb.co/4hycDnb/adez.png?auto=compress&cs=tinysrgb&w=400",
     social: {
       instagram: "https://instagram.com/adez.wav",
       twitter: "http://www.x.com/adezcarleone",
@@ -14,13 +14,13 @@ const artists = [
   {
     name: "Ceku",
     genre: "Rap Artist",
-    image: "https://i.ibb.co/5h4BXhgB/bu-sepp.png?auto=compress&cs=tinysrgb&w=400",
+    image: "https://i.ibb.co/ZRRL137m/ceku.png?auto=compress&cs=tinysrgb&w=400",
     social: { instagram: "@busesyldzz", twitter: "" }
   },
   {
     name: "Cüneyt Büyükyaka",
     genre: "Senaryo Yönetmeni",
-    image: "https://i.ibb.co/0RGn1nMs/cuneytiki.png?auto=compress&cs=tinysrgb&w=400",
+    image: "https://i.ibb.co/3YLBDt2y/cuneyt.png?auto=compress&cs=tinysrgb&w=400",
     social: {
       instagram: "https://www.instagram.com/cuneyt.buyukyaka",
       twitter: "https://x.com/cuneytbuyukyaka",
