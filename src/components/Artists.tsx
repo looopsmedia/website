@@ -28,10 +28,10 @@ const artists = [
     }
   },
   {
-    name: "Coming Soon",
-    genre: "Coming Soon",
-    image: "https://i.ibb.co/6JtR1P7V/revealingsoon.jpg?auto=compress&cs=tinysrgb&w=400",
-    social: { instagram: "", twitter: "" }
+    name: "Q Was",
+    genre: "Rap Artist",
+    image: "https://i.ibb.co/zhxWCHPZ/qwas.png?auto=compress&cs=tinysrgb&w=400",
+    social: { instagram: "https://www.instagram.com/que_was/", twitter: "", music: "https://open.spotify.com/intl-tr/artist/4Sp2E6iu35g8pp9K2hsirx" }
   }
 ];
 
