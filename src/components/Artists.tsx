@@ -55,7 +55,7 @@ const artists = [
     name: "Ceku",
     genre: "Rap Artist",
     image: "https://i.ibb.co/ZRRL137m/ceku.png?auto=compress&cs=tinysrgb&w=400",
-    social: { instagram: "@cekuisteya", twitter: "" },
+    social: { instagram: "https://www.instagram.com/cekuisteya", twitter: "" },
   }
 ];
 
