@@ -3,6 +3,15 @@ import { Instagram, Twitter, Music } from "lucide-react";
 
 const artists = [
   {
+    name: "Mevlan Kurtishi",
+    genre: "Nasheed Artist",
+    image: "https://i.ibb.co/fYJHpdjF/mevlan.png?auto=compress&cs=tinysrgb&w=400",
+    social: {
+      instagram: "https://www.instagram.com/mevlankurtishi",
+      twitter: "https://x.com/mevlan_kurtishi",
+      music: "https://open.spotify.com/intl-tr/artist/6wydir4mzVKMaHsxfIqjaD",
+    },
+  {
     name: "Adéz",
     genre: "Rap Artist",
     image: "https://i.ibb.co/4hycDnb/adez.png?auto=compress&cs=tinysrgb&w=400",
@@ -10,12 +19,6 @@ const artists = [
       instagram: "https://instagram.com/adez.wav",
       twitter: "http://www.x.com/adezcarleone",
     },
-  },
-  {
-    name: "Ceku",
-    genre: "Rap Artist",
-    image: "https://i.ibb.co/ZRRL137m/ceku.png?auto=compress&cs=tinysrgb&w=400",
-    social: { instagram: "@busesyldzz", twitter: "" },
   },
   {
     name: "Q Was",
@@ -34,30 +37,26 @@ const artists = [
     social: {
       instagram: "https://www.instagram.com/tarik.krgz",
       twitter: "",
-      music: "",
-        
+      music: "",  
+    },
+  },
+  },
+  { 
+    name: "Cüneyt Büyükyaka", 
+    genre: "Senaryo Yönetmeni", 
+    image: "https://i.ibb.co/3YLBDt2y/cuneyt.png?auto=compress&cs=tinysrgb&w=400", 
+    social: { 
+      instagram: "https://www.instagram.com/cuneyt.buyukyaka", 
+      twitter: "https://x.com/cuneytbuyukyaka", 
+      music: "https://open.spotify.com/intl-tr/artist/3KM4yx6xgZ3Ty2xdnQaI78?si=eHoTeNbpRHOuWDwZzD0dyQ" 
     },
   },
   {
-    name: "Lina K",
-    genre: "R&B Artist",
-    image: "https://images.unsplash.com/photo-1520975693411-53f57827c8c2?auto=format&fit=crop&w=900&q=80",
-    social: {
-      instagram: "@linak.music",
-      twitter: "@linak_official",
-      music: "https://open.spotify.com/",
-    },
-  },
-  {
-    name: "Mert Nova",
-    genre: "Producer",
-    image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80",
-    social: {
-      instagram: "@mertnova",
-      twitter: "https://x.com/mertnova",
-      music: "https://open.spotify.com/",
-    },
-  },
+    name: "Ceku",
+    genre: "Rap Artist",
+    image: "https://i.ibb.co/ZRRL137m/ceku.png?auto=compress&cs=tinysrgb&w=400",
+    social: { instagram: "@busesyldzz", twitter: "" },
+  }
 ];
 
 // helper: handle veya URL'i tam linke çevir
