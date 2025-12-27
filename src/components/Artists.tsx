@@ -66,6 +66,16 @@ const artists: Artist[] = [
     },
   },
   {
+    name: "Kaptan H. Davran",
+    genre: "Producer",
+    image: "https://i.ibb.co/YF4sTdMS/kaptan.png?auto=compress&cs=tinysrgb&w=400",
+    social: {
+      instagram: "https://www.instagram.com/aerokaptan?igsh=bnJzMnEwN3N2aXR1",
+      twitter: "",
+      music: "https://open.spotify.com/artist/1bucD5J4fbox5d5onn6S9A?si=cMYfbypfQzqyBr2yyyI64w",
+    },
+  },
+  {
     name: "Ceku",
     genre: "Rap Artist",
     image: "https://i.ibb.co/ZRRL137m/ceku.png?auto=compress&cs=tinysrgb&w=400",
