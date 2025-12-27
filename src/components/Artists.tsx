@@ -18,6 +18,12 @@ const artists = [
     social: { instagram: "@busesyldzz", twitter: "" }
   },
   {
+    name: "Q Was",
+    genre: "Rap Artist",
+    image: "https://i.ibb.co/zhxWCHPZ/qwas.png?auto=compress&cs=tinysrgb&w=400",
+    social: { instagram: "https://www.instagram.com/que_was/", twitter: "", music: "https://open.spotify.com/intl-tr/artist/4Sp2E6iu35g8pp9K2hsirx" }
+  },
+  {
     name: "Cüneyt Büyükyaka",
     genre: "Senaryo Yönetmeni",
     image: "https://i.ibb.co/3YLBDt2y/cuneyt.png?auto=compress&cs=tinysrgb&w=400",
@@ -26,12 +32,6 @@ const artists = [
       twitter: "https://x.com/cuneytbuyukyaka",
       music: "https://open.spotify.com/intl-tr/artist/3KM4yx6xgZ3Ty2xdnQaI78?si=eHoTeNbpRHOuWDwZzD0dyQ"
     }
-  },
-  {
-    name: "Q Was",
-    genre: "Rap Artist",
-    image: "https://i.ibb.co/zhxWCHPZ/qwas.png?auto=compress&cs=tinysrgb&w=400",
-    social: { instagram: "https://www.instagram.com/que_was/", twitter: "", music: "https://open.spotify.com/intl-tr/artist/4Sp2E6iu35g8pp9K2hsirx" }
   }
 ];
 
