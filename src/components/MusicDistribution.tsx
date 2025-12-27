@@ -71,7 +71,7 @@ export const MusicDistribution: React.FC = () => {
             <div className="space-y-4">
               <div className="flex items-center justify-between p-4 bg-white/5 rounded-xl">
                 <span className="text-white/80">Total Streams</span>
-                <span className="text-teal font-bold">4.1M+</span>
+                <span className="text-teal font-bold">11.4M+</span>
               </div>
               <div className="flex items-center justify-between p-4 bg-white/5 rounded-xl">
                 <span className="text-white/80">Active Platforms</span>
