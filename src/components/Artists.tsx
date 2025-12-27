@@ -57,7 +57,7 @@ const artists: Artist[] = [
   },
   {
     name: "Cüneyt Büyükyaka",
-    genre: "Senaryo Yönetmeni",
+    genre: "Sanat Yönetmeni",
     image: "https://i.ibb.co/3YLBDt2y/cuneyt.png?auto=compress&cs=tinysrgb&w=400",
     social: {
       instagram: "https://www.instagram.com/cuneyt.buyukyaka",
