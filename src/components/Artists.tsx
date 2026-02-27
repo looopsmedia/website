@@ -16,16 +16,6 @@ type Artist = {
 
 const artists: Artist[] = [
   {
-    name: "Mevlan Kurtishi",
-    genre: "Nasheed Artist",
-    image: "https://i.ibb.co/fYJHpdjF/mevlan.png?auto=compress&cs=tinysrgb&w=400",
-    social: {
-      instagram: "https://www.instagram.com/mevlankurtishi",
-      twitter: "https://x.com/mevlan_kurtishi",
-      music: "https://open.spotify.com/intl-tr/artist/6wydir4mzVKMaHsxfIqjaD",
-    },
-  },
-  {
     name: "Adéz",
     genre: "Rap Artist",
     image: "https://i.ibb.co/4hycDnb/adez.png?auto=compress&cs=tinysrgb&w=400",
