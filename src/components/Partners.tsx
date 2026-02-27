@@ -13,20 +13,6 @@ type Partner = {
 
 const partners: Partner[] = [
   {
-    name: "MAKAM Worldwide",
-    genre: "Production",
-    image: "https://i.ibb.co/DHh0Qmw5/makam.png?auto=compress&cs=tinysrgb&w=400",
-    bio: "Based in Dubai",
-    social: { instagram: "", twitter: "" },
-  },
-  {
-    name: "GALAKTIKA Pictures",
-    genre: "Film Production",
-    image: "https://i.ibb.co/gMBTTGSC/galaktika.png?auto=compress&cs=tinysrgb&w=400",
-    bio: "Based in North Macedonia",
-    social: { instagram: "", twitter: "" },
-  },
-  {
     name: "KREAFLY",
     genre: "Marketing & Advertising",
     image: "https://i.ibb.co/1GTHXFDV/kreafly.png",
